@@ -92,6 +92,47 @@
        id="path-effect100795-5-2"
        is_visible="true"
        lpeversion="1" />
+    <rect
+       x="93.583978"
+       y="3.723967"
+       width="44.438495"
+       height="31.902118"
+       id="rect9981" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect55878"
+       is_visible="true"
+       lpeversion="1" />
+    <rect
+       x="4.2686302"
+       y="25.19022"
+       width="121.72411"
+       height="20.20781"
+       id="rect19626" />
+    <rect
+       x="2.6741918"
+       y="45.773585"
+       width="137.11832"
+       height="31.24177"
+       id="rect68415" />
+    <rect
+       x="88.585464"
+       y="8.3625942"
+       width="81.470848"
+       height="33.136553"
+       id="rect51664" />
+    <rect
+       x="12.134456"
+       y="34.974997"
+       width="138.66991"
+       height="59.011034"
+       id="rect37344" />
+    <rect
+       x="4.4526263"
+       y="4.3268855"
+       width="107.59474"
+       height="37.103474"
+       id="rect3752" />
   </defs>
   <sodipodi:namedview
      id="namedview43"
@@ -116,9 +157,9 @@
      inkscape:snap-center="true"
      inkscape:snap-text-baseline="true"
      inkscape:snap-page="true"
-     inkscape:zoom="0.78679841"
-     inkscape:cx="512.20236"
-     inkscape:cy="505.212"
+     inkscape:zoom="1.563538"
+     inkscape:cx="567.94271"
+     inkscape:cy="310.51372"
      inkscape:window-width="1920"
      inkscape:window-height="1056"
      inkscape:window-x="0"
@@ -314,21 +355,21 @@ SettingsUrl short: http://www.festi.info/boxes.py/ClosedBox?x=79&amp;y=86&amp;h=
      style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect10648)"><tspan
        x="774.79492"
        y="82.036376"
-       id="tspan7125">https://www.festi.info/boxes.py/ClosedBox?</tspan><tspan
+       id="tspan16003">https://www.festi.info/boxes.py/ClosedBox?</tspan><tspan
        x="774.79492"
        y="108.703"
-       id="tspan7127">FingerJoint_angle=90.0&amp;FingerJoint_style=rectangular&amp;FingerJoint_surroundingspaces=2.0&amp;FingerJoint_bottom_lip=</tspan><tspan
+       id="tspan16005">FingerJoint_angle=90.0&amp;FingerJoint_style=rectangular&amp;FingerJoint_surroundingspaces=2.0&amp;FingerJoint_bottom_lip=</tspan><tspan
        x="774.79492"
        y="135.36963"
-       id="tspan7129">0.0&amp;FingerJoint_edge_width=1.0&amp;FingerJoint_extra_length=0.0&amp;FingerJoint_finger=2.0&amp;FingerJoint_play=0.0&amp;Finger</tspan><tspan
+       id="tspan16007">0.0&amp;FingerJoint_edge_width=1.0&amp;FingerJoint_extra_length=0.0&amp;FingerJoint_finger=2.0&amp;FingerJoint_play=0.0&amp;Finger</tspan><tspan
        x="774.79492"
        y="162.03625"
-       id="tspan7133"><tspan
+       id="tspan16011"><tspan
          dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0001039505"
-         id="tspan7131">Joint_space=2.0&amp;FingerJoint_width=1.0&amp;x=79&amp;y=86&amp;h=39&amp;outside=0&amp;thickness=3.0&amp;format=svg&amp;tabs=0.0&amp;qr_code</tspan></tspan><tspan
+         id="tspan16009">Joint_space=2.0&amp;FingerJoint_width=1.0&amp;x=79&amp;y=86&amp;h=39&amp;outside=0&amp;thickness=3.0&amp;format=svg&amp;tabs=0.0&amp;qr_code</tspan></tspan><tspan
        x="774.79492"
        y="188.70288"
-       id="tspan7135">=0&amp;debug=0&amp;labels=0&amp;labels=1&amp;reference=100&amp;inner_corners=loop&amp;burn=0.1&amp;language=en&amp;render=0</tspan></text>
+       id="tspan16013">=0&amp;debug=0&amp;labels=0&amp;labels=1&amp;reference=100&amp;inner_corners=loop&amp;burn=0.1&amp;language=en&amp;render=0</tspan></text>
   <rect
      style="fill:none;stroke:#000000;stroke-width:0.198781;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
      id="rect15810"
@@ -383,7 +424,7 @@ SettingsUrl short: http://www.festi.info/boxes.py/ClosedBox?x=79&amp;y=86&amp;h=
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect40596);fill:#ffff00"><tspan
        x="428.49219"
        y="104.59371"
-       id="tspan7137">POWER</tspan></text>
+       id="tspan16015">POWER</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0,-0.26458333,0.26458333,0,92.584124,210.25402)"
@@ -391,7 +432,7 @@ SettingsUrl short: http://www.festi.info/boxes.py/ClosedBox?x=79&amp;y=86&amp;h=
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect40596-6);fill:#ffff00"><tspan
        x="428.49219"
        y="104.59371"
-       id="tspan7139">EXPANSION</tspan></text>
+       id="tspan16017">EXPANSION</tspan></text>
   <rect
      style="fill:#ffff00;stroke:none;stroke-width:0.0724843;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
      id="rect73786"
@@ -958,5 +999,16 @@ SettingsUrl short: http://www.festi.info/boxes.py/ClosedBox?x=79&amp;y=86&amp;h=
      style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2439);fill:#ff0000"><tspan
        x="40.470703"
        y="-19.076905"
-       id="tspan7141">3 mm material</tspan></text>
+       id="tspan16019">3 mm material</tspan></text>
+  <image
+     preserveAspectRatio="none"
+     inkscape:svg-dpi="300"
+     width="37.000126"
+     height="25.999996"
+     style="fill:#ffff00;stroke:#ffff00;image-rendering:optimizeQuality"
+     xlink:href="label_A10.svg"
+     id="image11869"
+     x="-52.994671"
+     y="110.52697"
+     transform="rotate(-90)" />
 </svg>
