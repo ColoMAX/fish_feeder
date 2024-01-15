@@ -108,7 +108,7 @@ number:
   - platform: template
     name: Number times per day
     min_value: 1
-    max_value: 420
+    max_value: 10
     step: 1
     initial_value: 1
     restore_value: true
