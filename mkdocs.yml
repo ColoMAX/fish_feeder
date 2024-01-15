@@ -3,8 +3,10 @@ repo_url: https://github.com/ColoMAX/fish_feeder
 site_url: https://ColoMAX.github.io/fish_feeder
 
 nav:
+  - index.md
   - getting-started.md
   - "overview.md"
+  - "FISH_FEEDER": getting-started.md
 
 theme:
   name: readthedocs
