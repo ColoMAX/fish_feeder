@@ -25,13 +25,13 @@ int main() {
   new_stamp = {0};
 
   int feed_day_interval_mock = 7;  // id(feed_day_interval).state;
-  int feed_num_per_day_mock = 1;   // id(feed_num_per_day).state;
+  int feed_num_per_day_mock = 2;   // id(feed_num_per_day).state;
   int feed_start_time_hr = 1;      // atoi(feed_start_l.substr(0, 2).c_str());
   int feed_start_time_min = 00;    // atoi(feed_start_l.substr(3, 2).c_str());
   int feed_end_time_hr = 23;       // atoi(feed_end_l.substr(0, 2).c_str());
   int feed_end_time_min = 10;      // atoi(feed_end_l.substr(3, 2).c_str());
   for (time_t warp_time = 0; warp_time < (60LL * 60 * 24 * 15);
-       warp_time += 60 * 60) {
+       warp_time += 60) {
     auto time_now = init_time + warp_time;  // id(sntptime).now();
 
 #else
@@ -122,7 +122,7 @@ new_stamp.tm_mday = time_obj.day_of_month;
     ESP_LOGD("main", "Result of search %d: %s", found_idx, strtok(ctime(&feed_moment),"\n"));
 #endif
     if (found_idx > 0 ||
-        ((found_idx == 0) && (num_days_ago == feed_day_interval_l))) {
+        ((found_idx == 0) && (num_days_ago % feed_day_interval_l == 0))) {
       ESP_LOGD("main", "Go feed for %dth time at %s", found_idx + 1,
                strtok(ctime(&time_now), "\n"));
 #ifndef ARDUINO
