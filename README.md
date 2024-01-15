@@ -57,3 +57,4 @@ It is intend to be used stand-alone, but because it is written using the esphome
 - test code: daylight saving switch
 - custom css
 - Add light control (timer)
+- Make scheduler O(1) instead of O(n)
