@@ -12,7 +12,7 @@ Standalone automatic fish feeder, based on a ESP8266 with esphome.
 
 ### Requirements
 
-- [esphome](esphome.io) (version 2023.11.6)
+- [esphome](www.esphome.io) (version 2023.11.6)
 
 ### Instructions
 
