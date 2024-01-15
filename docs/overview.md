@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- [Install ESPHome](www.esphome.io) (version 2023.11.6)
+- [Install ESPHome](https://www.esphome.io) (version 2023.11.6)
 
 ## Customization
 
