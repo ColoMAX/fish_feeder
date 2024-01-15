@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- [esphome](www.esphome.io) (version 2023.11.6)
+- [esphome](https://www.esphome.io) (version 2023.11.6)
 
 Install esphome.
 
