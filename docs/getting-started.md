@@ -8,6 +8,7 @@ If you do not already have the fishfeeder, than first go to [Overview](overview.
   > Tip: you can test whether the device is properly working, by pressing the button on the top for around 1 second. The dispenser screw should start to turn and stop as you release it. If not, there is likely something wrong with your power connection.
 - The first time your power on the device, it will create a WiFi access point, named "Fish Feeder Hotspot". Connect to it using the password `SomethingFishy`.
 - Now your device should ask you, or redirect you towards the configuration page of the device. If not, you can manually go to the website `http://192.168.4.1`, making sure you are still connected to the access point of the fishfeeder.
+  > Alternatively you can try to connect the device via usb to your computer and visit [Improv via Serial](https://www.improv-wifi.com/) to set the initial WiFi credentials directly, without using the hotspot. **NOTE** not all browsers support this feature, the site will indicate if so.
 - (optional) Here you can apply any updates (`*.bin` e.g. `firmware.bin` file) if provided to you.
 - Now you can configure you WiFI settings inside of the fishfeeder.
 - After successfully submitting you WiFi credentials to the device, you should see the access point disappear. After which you should be able to connect to the general configuration panel of the device by navigating to `http://fishfeeder.local`.
@@ -32,8 +33,12 @@ From the configuration page you can also apply updates manually if you have acce
 
 ## Troubleshooting
 
-- Make sure yo have a proper power supply and a working power cable connected to the feeder.
-- Reset to factory defaults.
+- Make sure yo have a **proper power supply** and a working power cable connected to the feeder.
+- If you are unable to do a firmware update, you can try to restart in safe-mode, vai the configuration webpage, before uploading the file.
+- If you have troubles with applying your new schedule, you may want to reset the scheduler, which you also can do via the webinterface. After which you should be able to see that the last feed time changed.
+- If you are helpless you can also try to reset to **factory defaults**:
+    - If you can access the configuration webpage, you can reset back to factory defaults over there.
+    - If not, you can use the button on the device itself: You need to do three rapid salvos of one short press, than one longer (0.5 seconds), similar to a heartbeat. After 10 seconds it will than vibrate (assuming vibration motor is installed), and do the factory reset.
 
 
 Lastly you can try to submit a new issue on github if you are not able to figure it out yourself.
