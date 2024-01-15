@@ -122,7 +122,7 @@ new_stamp.tm_mday = time_obj.day_of_month;
     ESP_LOGD("main", "Result of search %d: %s", found_idx, strtok(ctime(&feed_moment),"\n"));
 #endif
     if (found_idx > 0 ||
-        ((found_idx == 0) && (num_days_ago % feed_day_interval_l == 0))) {
+        ((found_idx == 0) && (num_days_ago >= feed_day_interval_l))) {
       ESP_LOGD("main", "Go feed for %dth time at %s", found_idx + 1,
                strtok(ctime(&time_now), "\n"));
 #ifndef ARDUINO
