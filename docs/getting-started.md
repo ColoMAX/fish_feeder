@@ -33,14 +33,16 @@ You can configure the amount dispensed per feeding, which is an *arbitrary scale
 
 From the configuration page you can also apply updates manually if you have access to an update file, by uploading the `.bin` file.
 
+You may also visit the [release page](https://github.com/ColoMAX/fish_feeder/releases/) to retrieve generic firmware updates.
+
 ## Troubleshooting
 
 - Make sure yo have a **proper power supply** and a working power cable connected to the feeder.
 - If you are unable to do a firmware update, you can try to restart in safe-mode, vai the configuration webpage, before uploading the file.
 - If you have troubles with applying your new schedule, you may want to reset the scheduler, which you also can do via the webinterface. After which you should be able to see that the last feed time changed.
 - If you are helpless you can also try to reset to **factory defaults**:
-    - If you can access the configuration webpage, you can reset back to factory defaults over there.
-    - If not, you can use the button on the device itself: You need to do three rapid salvos of one short press, then one longer (0.5 seconds), similar to a heartbeat. 10 seconds after the lasst lomg press, will it vibrate (assuming vibration motor is installed), and do the factory reset.
+      - If you can access the configuration webpage, you can reset back to factory defaults over there.
+      - If not, you can use the button on the device itself: You need to do three rapid salvos of one short press, then one longer (0.5 seconds), similar to a heartbeat. 10 seconds after the lasst lomg press, will it vibrate (assuming vibration motor is installed), and do the factory reset.
 
 
 Lastly you can try to submit a new issue on github if you are not able to figure it out yourself.
