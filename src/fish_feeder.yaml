@@ -5,6 +5,10 @@ esphome:
       then:
         - lambda: |-
             id(last_update_str).publish_state(strtok(ctime(&id(last_timestamp)), "\n"));
+            char fsbuf[15];
+            snprintf(fsbuf, sizeof(fsbuf), "%.2g", id(feed_sum));
+            id(feed_sum_str).publish_state(fsbuf);
+
 preferences:
   flash_write_interval: 1min
 
@@ -29,13 +33,21 @@ captive_portal:
 
 web_server:
   port: 80
+  log: false
 
 globals:
   - id: last_timestamp # to keep track of days interval
-    type: long long
+    type: time_t
     restore_value: true
     initial_value: "0"
-
+  - id: feed_sum # running total sum of dosages
+    type: double
+    restore_value: true
+    initial_value: "0"
+  - id: motor_start_time
+    type: struct timeval
+    restore_value: false
+    initial_value: "{0}"
 light:
   - platform: binary
     name: Fish tank light
@@ -151,7 +163,6 @@ number:
     restore_value: true
     id: feed_dosage
     optimistic: true
-
 button:
   - platform: template
     name: Manual feed
@@ -161,7 +172,7 @@ button:
       - delay: 500ms
       - switch.turn_on: feed_motor
       - delay: !lambda |-
-          return id(feed_dosage).state*1000;
+          return id(feed_dosage).state*1000; // milliseconds
       - switch.turn_off: feed_motor
       - switch.turn_on: vib_motor
       - delay: 500ms
@@ -172,7 +183,7 @@ button:
     on_press:
       - then:
          - lambda: |-
-            id(last_timestamp)=1705273200LL;
+            id(last_timestamp)=1705273200LL; // start of project
             id(last_update_str).publish_state(strtok(ctime(&id(last_timestamp)), "\n"));
     id: last_time_btn
 switch:
@@ -185,12 +196,39 @@ switch:
     # optimistic: true
     turn_on_action:
       then:
+        - lambda: |-
+            id(sntptime).now().timestamp;
+            struct timeval tv;
+            gettimeofday(&tv,NULL);
+            id(motor_start_time)=tv;
         - servo.write:
             id: screw_servo
             level: -10%
     turn_off_action:
       then:
         - servo.detach: screw_servo
+        - lambda: |-
+            # define timeval_diff_macro(a, b, result)                  \
+            do {                                                \
+              (result)->tv_sec = (a)->tv_sec - (b)->tv_sec;     \
+              (result)->tv_usec = (a)->tv_usec - (b)->tv_usec;  \
+              if ((result)->tv_usec < 0) {                      \
+                --(result)->tv_sec;                             \
+                (result)->tv_usec += 1000000;                \
+              }                                                 \
+            } while (0)
+
+            id(sntptime).now().timestamp;
+            struct timeval tv;
+            struct timeval tvstart = id(motor_start_time);
+
+            gettimeofday(&tv,NULL);
+            timeval_diff_macro(&tv,&tvstart,&tv);
+            id(feed_sum)+=  (double)tv.tv_sec+tv.tv_usec/1000000.0;
+            char fsbuf[15];
+            snprintf(fsbuf, sizeof(fsbuf), "%.2g", id(feed_sum));
+            id(feed_sum_str).publish_state(fsbuf);
+
 
   - platform: gpio
     pin: GPIO14
@@ -297,9 +335,12 @@ binary_sensor:
           - switch.turn_on: factory_reset_switch
     internal: true
 text_sensor:
-  platform: template
-  name: Last time fed (automatically)
-  id: last_update_str
+  - platform: template
+    name: Last time fed (automatically)
+    id: last_update_str
+  - platform: template
+    name: Running sum fed
+    id: feed_sum_str
 time:
   - platform: sntp
     id: sntptime
