@@ -1,14 +1,17 @@
 site_name: Fish Feeder Documentation
 repo_url: https://github.com/ColoMAX/fish_feeder
 site_url: https://ColoMAX.github.io/fish_feeder
-
+docs_dir: .
 nav:
-  - index.md
-  - "getting-started.md"
-  - "overview.md"
+  - docs/index.md
+  - "docs/getting-started.md"
+  - "docs/overview.md"
 
 theme:
   name: readthedocs
   font:
     text: Roboto
     code: Ubuntu Mono # Roboto mono
+plugins:
+  - search
+  - same-dir

@@ -37,13 +37,12 @@ To generate a QR to this page, which will be put on the box, run `cd design/mech
 
 ## Build
 
+![General idea of electrical connections](../design/electrical/schematic.svg).
+
 ### Parts list
 
 - 1x esp8266 (Wemos D1 mini)
 - 2x SG90 micro Servo's
-  - one of which needs to be modified for continues rotation:
-    - remove rotation limit on one of the gears
-    - De-solder internal potentiometer and add two equivalent resistors, to fool controller in always center position, but keep potentiometer in there, for structural support of gears.
 - 3D printer and some (food-safe PLA) filament (approx 7m/21g of filament)
 - laser/water cutter with 3mm flat material
 - 1x vibration motor (Seeed Studio 316040001)
@@ -58,13 +57,17 @@ To generate a QR to this page, which will be put on the box, run `cd design/mech
 
 These instructions are not complete, but should give you the general idea, be creative!
 
-- 3D print the screw and bucket (`design/mechanical/*.3mf`)
-- Laser-cut the casing (`design/mechanical/Laser_cut_box.svg`)
-- Solder as described in `design/electrical/schematic.svg`.
-- Use wire and the small pieces from the cutter to create the hinges
-- Screw the continues servo to the bucket
-- Heat the end of the screw in order to press-fit it to the servo
-- Glue to other servo on a 90 degree angle to the previous one
+- 3D print the [screw](../design/mechanical/screw.3mf) and [bucket](../design/mechanical/bucket.3mf) `mechanical/*.3mf`.
+- Laser-cut the casing [mechanical/Laser_cut_box.svg](../design/mechanical/Laser_cut_box.svg).
+- one the servo's needs to be modified for continues rotation. You can follow a few guides online but here is a summary:
+      - Remove rotation limit on one of the gears
+      - Remove the metal extremities on the base of the potentiometer shaft.
+      - De-solder internal potentiometer and add two equivalent resistors, to fool controller in always center position, but keep potentiometer in there, for structural support of gears.
+- Solder as described in [electrical/schematic.svg](../design/electrical/schematic.svg).
+- Use wire and the small pieces from the cutter to create the hinges.
+- Screw the continues servo to the bucket.
+- Heat the end of the screw in order to press-fit it to the servo.
+- Glue to other servo on a 90 degree angle to the previous one.
 - Add the headers and hinge and wires between hinge, servo and your aquarium lid.
 - Close it all up.
 

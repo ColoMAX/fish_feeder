@@ -2,6 +2,8 @@
 
 If you do not already have the fishfeeder, than first go to [Overview](overview.md#overview) before continuing this document.
 
+![The fishfeeder](../assets/pictures/skyview.png)
+
 ## Initial Setup
 
 - Power on the device by connecting the power port (likely a micro-usb or usb-C port on the device). The device should not pull more than 500mA at 5v, thus any usb power source should suffice, but do mind to use a short or high quality usb cable.
