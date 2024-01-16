@@ -2,7 +2,7 @@
 
 If you do not already have the fishfeeder, than first go to [Overview](overview.md#overview) before continuing this document.
 
-![The fishfeeder](../assets/pictures/skyview.png)
+![The fishfeeder](assets/pictures/skyview.png)
 
 ## Initial Setup
 

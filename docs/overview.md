@@ -37,7 +37,7 @@ To generate a QR to this page, which will be put on the box, run `cd design/mech
 
 ## Build
 
-![General idea of electrical connections](../design/electrical/schematic.svg).
+![General idea of electrical connections](design/electrical/schematic.svg).
 
 ### Parts list
 
@@ -57,13 +57,13 @@ To generate a QR to this page, which will be put on the box, run `cd design/mech
 
 These instructions are not complete, but should give you the general idea, be creative!
 
-- 3D print the [screw](../design/mechanical/screw.3mf) and [bucket](../design/mechanical/bucket.3mf) `mechanical/*.3mf`.
-- Laser-cut the casing [mechanical/Laser_cut_box.svg](../design/mechanical/Laser_cut_box.svg).
+- 3D print the [screw](design/mechanical/screw.3mf) and [bucket](design/mechanical/bucket.3mf) `mechanical/*.3mf`.
+- Laser-cut the casing [mechanical/Laser_cut_box.svg](design/mechanical/Laser_cut_box.svg).
 - one the servo's needs to be modified for continues rotation. You can follow a few guides online but here is a summary:
       - Remove rotation limit on one of the gears
       - Remove the metal extremities on the base of the potentiometer shaft.
       - De-solder internal potentiometer and add two equivalent resistors, to fool controller in always center position, but keep potentiometer in there, for structural support of gears.
-- Solder as described in [electrical/schematic.svg](../design/electrical/schematic.svg).
+- Solder as described in [electrical/schematic.svg](design/electrical/schematic.svg).
 - Use wire and the small pieces from the cutter to create the hinges.
 - Screw the continues servo to the bucket.
 - Heat the end of the screw in order to press-fit it to the servo.
