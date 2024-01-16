@@ -40,7 +40,7 @@ From the configuration page you can also apply updates manually if you have acce
 - If you have troubles with applying your new schedule, you may want to reset the scheduler, which you also can do via the webinterface. After which you should be able to see that the last feed time changed.
 - If you are helpless you can also try to reset to **factory defaults**:
     - If you can access the configuration webpage, you can reset back to factory defaults over there.
-    - If not, you can use the button on the device itself: You need to do three rapid salvos of one short press, than one longer (0.5 seconds), similar to a heartbeat. After 10 seconds it will than vibrate (assuming vibration motor is installed), and do the factory reset.
+    - If not, you can use the button on the device itself: You need to do three rapid salvos of one short press, then one longer (0.5 seconds), similar to a heartbeat. 10 seconds after the lasst lomg press, will it vibrate (assuming vibration motor is installed), and do the factory reset.
 
 
 Lastly you can try to submit a new issue on github if you are not able to figure it out yourself.
