@@ -1,11 +1,10 @@
-name: build
+name: build-docs
 on:
   push:
     branches:
       - main
     paths:
       - 'docs/**'
-  workflow_dispatch: 
 permissions:
   contents: write
 jobs:
