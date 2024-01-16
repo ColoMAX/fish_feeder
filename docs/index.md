@@ -24,7 +24,7 @@ If you are new to the Fish Feeder project, start with the user documentation to 
 
 ## Contribution
 
-Contributions to the documentation are welcome! If you find any issues or have suggestions, feel free to open an [issue](https://github.com/ColoMAX/fish_feeder/issues) or submit a [pull request](https://github.com/ColoMAX/fish_feeder/pulls).
+Contributions to the documentation are welcome! If you find any issues or have suggestions, feel free to open an [issue](https://github.com/ColoMAX/fishfeeder/issues) or submit a [pull request](https://github.com/ColoMAX/fishfeeder/pulls).
 
 ## License
 

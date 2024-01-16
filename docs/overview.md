@@ -16,10 +16,10 @@ One can customize this project with ease. A few examples are:
 
 ### Software
 
-- Add your modifications to the configuration in `src/fish_feeder.yaml`.
+- Add your modifications to the configuration in `src/fishfeeder.yaml`.
   - e.g.: new name, enable home-assistant integration, add other controls, such as RGB lights.
 - connect via usb.
-- run: `cd src/; esphome run --device /dev/ttyUSB0 fish_feeder.yaml `
+- run: `cd src/; esphome run --device /dev/ttyUSB0 fishfeeder.yaml `
 - Then connect to wifi access point, or go to the webserver (by default `http://fishfeeder.local:80`) to configure it.
 
 ### Mechanical
@@ -37,7 +37,7 @@ To generate a QR to this page, which will be put on the box, run `cd design/mech
 
 ## Build
 
-![General idea of electrical connections](https://raw.githubusercontent.com/ColoMAX/fish_feeder/master/design/electrical/schematic.svg).
+![General idea of electrical connections](https://raw.githubusercontent.com/ColoMAX/fishfeeder/master/design/electrical/schematic.svg).
 
 ### Parts list
 
@@ -63,7 +63,7 @@ These instructions are not complete, but should give you the general idea, be cr
       - Remove rotation limit on one of the gears
       - Remove the metal extremities on the base of the potentiometer shaft.
       - De-solder internal potentiometer and add two equivalent resistors, to fool controller in always center position, but keep potentiometer in there, for structural support of gears.
-- Solder as described in [electrical/schematic.svg](https://raw.githubusercontent.com/ColoMAX/fish_feeder/master/design/electrical/schematic.svg).
+- Solder as described in [electrical/schematic.svg](https://raw.githubusercontent.com/ColoMAX/fishfeeder/master/design/electrical/schematic.svg).
 - Use wire and the small pieces from the cutter to create the hinges.
 - Screw the continues servo to the bucket.
 - Heat the end of the screw in order to press-fit it to the servo.

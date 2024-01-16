@@ -1,6 +1,6 @@
 site_name: Fish Feeder Documentation
-repo_url: https://github.com/ColoMAX/fish_feeder
-site_url: https://ColoMAX.github.io/fish_feeder
+repo_url: https://github.com/ColoMAX/fishfeeder
+site_url: https://ColoMAX.github.io/fishfeeder
 nav:
   - index.md
   - "getting-started.md"

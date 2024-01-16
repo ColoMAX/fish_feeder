@@ -354,5 +354,5 @@ time:
           - lambda: |-
               #include "../../../../timing.cpp"
 improv_serial:
-  # next_url: https://colomax.github.io/fish_feeder/getting-started/#configuration
+  # next_url: https://colomax.github.io/fishfeeder/getting-started/#configuration
   next_url: http://{{ip_address}}:80

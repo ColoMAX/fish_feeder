@@ -33,7 +33,7 @@ You can configure the amount dispensed per feeding, which is an *arbitrary scale
 
 From the configuration page you can also apply updates manually if you have access to an update file, by uploading the `.bin` file.
 
-You may also visit the [release page](https://github.com/ColoMAX/fish_feeder/releases/) to retrieve generic firmware updates.
+You may also visit the [release page](https://github.com/ColoMAX/fishfeeder/releases/) to retrieve generic firmware updates.
 
 ## Troubleshooting
 

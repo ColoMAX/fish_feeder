@@ -14,7 +14,7 @@ Although the project is build using an ESP8266, other controllers supported by E
 
 ## Getting started
 
-Take a look at the [docs](https://ColoMAX.github.io/fish_feeder).
+Take a look at the [docs](https://ColoMAX.github.io/fishfeeder).
 
 ## TODO
 

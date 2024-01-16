@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="9.8942247"
-     inkscape:cx="113.19735"
-     inkscape:cy="32.999048"
+     inkscape:zoom="4.8348576"
+     inkscape:cx="57.085446"
+     inkscape:cy="44.985813"
      inkscape:window-width="1920"
      inkscape:window-height="1056"
      inkscape:window-x="0"
@@ -88,13 +88,13 @@
        style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3752);fill:#ffff00"><tspan
          x="4.453125"
          y="24.219307"
-         id="tspan1737"><tspan
+         id="tspan892"><tspan
            style="font-weight:bold"
-           id="tspan1731">MS</tspan><tspan
+           id="tspan886">MS</tspan><tspan
            style="font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-           id="tspan1733">fishf</tspan><tspan
+           id="tspan888">fishf</tspan><tspan
            style="font-size:16px"
-           id="tspan1735">1</tspan></tspan></text>
+           id="tspan890">1</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-2.365093,4.7638233)"
@@ -102,29 +102,30 @@
        style="font-size:12px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect37344);fill:#ffff00"><tspan
          x="12.134766"
          y="45.783662"
-         id="tspan1739">http://fishfeeder.local:80
+         id="feeder_url">http://fishfeeder.local:80
 </tspan><tspan
          x="12.134766"
          y="60.783662"
-         id="tspan1741">ssid:Fish Feeder Hotspot
+         id="feeder_ap">ssid:FishFeeder Hotspot
 </tspan><tspan
          x="12.134766"
          y="75.783662"
-         id="tspan1743">passwrd:SomethingFishy</tspan></text>
+         id="feeder_ap_psk">passwrd:SomethingFishy</tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
        id="text51662"
        style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect51664)" />
-    <image
-       preserveAspectRatio="none"
-       inkscape:svg-dpi="96"
-       width="16.48329"
-       height="16.48329"
-       xlink:href="qr.svg"
-       id="image18084"
-       x="21.757153"
-       y="-1.1158996"
-       style="fill:#ffff00" />
+    <g
+       id="g33"
+       transform="matrix(0.50839889,0,0,0.50839889,10.790977,-0.4951919)">
+      <use
+         xlink:href="qr.svg#QRcode"
+         id="image1632"
+         x="21.241318"
+         y="-1.2687628"
+         width="100%"
+         height="100%" />
+    </g>
   </g>
 </svg>
