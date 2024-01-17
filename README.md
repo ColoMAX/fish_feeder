@@ -1,11 +1,16 @@
----
-author: colomax
-date: 14-01-2024
----
+<h1 align="center">
+<img src="https://raw.githubusercontent.com/ColoMAX/fishfeeder/main/design/mechanical/logo.svg" width="100">
+</h1><br>
+
 # FishFeeder
 
 Standalone automatic fish feeder, based on a ESP8266 with ESPHome.
+
+<center>
+
 ![](docs/assets/pictures/skyview.png)
+
+</center>
 
 Just dispenses (fish) food using a 3D-printed (archimedean) two flute screw. It uses a modified servo motor to drive the screw, such that it no longer has angle limits. A secondary servo is installed to open a lid of the fish tank, as well as a vibration motor to make the dispenses more consistent. An additional relay can be installed to control some form of lighting.
 

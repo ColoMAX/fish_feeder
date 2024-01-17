@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 99.999997 99.999997"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:object-paths="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:snap-page="true"
+     units="mm"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.0963855"
+     inkscape:cx="287.3077"
+     inkscape:cy="281.37913"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="535"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5817">
+      <stop
+         style="stop-color:#f5008c;stop-opacity:1"
+         offset="0"
+         id="stop5813" />
+      <stop
+         style="stop-color:#8f00f1;stop-opacity:0.00059459"
+         offset="1"
+         id="stop5815" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5735">
+      <stop
+         style="stop-color:#ff0ac5;stop-opacity:1"
+         offset="0"
+         id="stop5731" />
+      <stop
+         style="stop-color:#8f00f1;stop-opacity:1"
+         offset="1"
+         id="stop5733" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5735"
+       id="radialGradient5156"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0,1.2272448,-1.6461131,0,1007.9404,471.86872)"
+       cx="140.04504"
+       cy="302.9657"
+       fx="140.04504"
+       fy="302.9657"
+       r="197.41013" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5817"
+       id="radialGradient5156-2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.00167009,-0.18681881,0.40091729,-0.00358406,14.036398,361.23826)"
+       cx="460.00241"
+       cy="302.9657"
+       fx="460.00241"
+       fy="302.9657"
+       r="197.41013" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g6605"
+       transform="matrix(0.95970862,0,0,0.95970862,-79.303792,-163.31334)">
+      <path
+         id="path5053"
+         style="fill:url(#radialGradient5156);fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
+         d="m 472.16797,643.73828 -159.85352,63.45117 154.58203,189.82617 -64.57617,139.38868 80.58203,-12.8379 26.32227,-24.93163 26.32227,24.93163 80.58203,12.8379 -64.57618,-139.38868 154.58204,-189.82617 -159.85352,-63.45117 53.70898,66.09766 -80.43945,-24.69336 57.85742,68.75195 -66.9375,143.12109 h -2.49218 l -66.93555,-143.12109 57.85547,-68.75195 -80.43946,24.69336 z"
+         transform="scale(0.26458333)" />
+      <path
+         id="path5053-8"
+         style="opacity:1;fill:url(#radialGradient5156-2);fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
+         d="m 124.92777,170.32241 -42.294572,16.78813 40.899832,50.22484 -17.08578,36.87992 21.32066,-3.3967 6.96443,-6.59649 6.96444,6.59649 21.32066,3.3967 -17.08578,-36.87992 40.89983,-50.22484 -42.29458,-16.78813 14.2105,17.48834 -21.28293,-6.53345 15.3081,18.19062 -17.71054,37.86746 h -0.65939 l -17.71003,-37.86746 15.30759,-18.19062 -21.28294,6.53345 z" />
+    </g>
+  </g>
+  <metadata
+     id="metadata834">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>ColoMAX</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:date>17-01-2024</dc:date>
+        <dc:description>FishFeeder logo</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
