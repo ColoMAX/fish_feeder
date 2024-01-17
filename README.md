@@ -20,4 +20,4 @@ Take a look at the [docs](https://ColoMAX.github.io/fishfeeder).
 
 - custom css
 - Add light control (timer)
-- Change order in webserver (create pr esphome feature-request #1774)
+- ~~Change order in webserver (create pr esphome feature-request #1774)~~ fixed by prefix numbers

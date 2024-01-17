@@ -50,12 +50,12 @@ globals:
     initial_value: "{0}"
 light:
   - platform: binary
-    name: Fish tank light
+    name: 00. Fish tank light
     output: light_relay
 
 select:
   - platform: template
-    name: "First feeding of day"
+    name: 02. First feeding of day
     restore_value: true
     optimistic: true
     options:
@@ -92,7 +92,7 @@ select:
     id: feed_first_time
     icon: mdi:icon7-time
   - platform: template
-    name: "Last feeding of day"
+    name: 03. Last feeding of day
     restore_value: true
     optimistic: true
     options:
@@ -130,7 +130,7 @@ select:
     icon: mdi:icon7-time
 number:
   - platform: template
-    name: Number times per day
+    name: 05. Number times per day
     min_value: 1
     max_value: 10
     step: 1
@@ -140,7 +140,7 @@ number:
     optimistic: true
     icon: mdi:icon7-th-list
   - platform: template
-    name: Once every ...  days
+    name: 04. Once every ...  days
     min_value: 1
     max_value: 14
     step: 1
@@ -155,7 +155,7 @@ number:
             if(x>1) {id(feed_num_per_day).publish_state(1);id(feed_num_per_day).update();}
 
   - platform: template
-    name: Dosage
+    name: 06. Dosage
     min_value: 0.2
     max_value: 5
     step: 0.2
@@ -165,7 +165,7 @@ number:
     optimistic: true
 button:
   - platform: template
-    name: Manual feed
+    name: 01. Manual feed
     icon: mdi:icon-stackexchange
     on_press:
       - cover.open: fishtank_lid
@@ -179,7 +179,7 @@ button:
       - cover.close: fishtank_lid
     id: feeder_trigger
   - platform: template
-    name: Reset last feeding time
+    name: 08. Reset last feeding time
     on_press:
       - then:
          - lambda: |-
@@ -229,7 +229,6 @@ switch:
             snprintf(fsbuf, sizeof(fsbuf), "%.2g", id(feed_sum));
             id(feed_sum_str).publish_state(fsbuf);
 
-
   - platform: gpio
     pin: GPIO14
     name: vibration motor
@@ -240,15 +239,15 @@ switch:
       - switch.turn_off: vib_motor
 
   - platform: restart
-    name: "Restart"
+    name: 10. Restart
     restore_mode: ALWAYS_OFF
 
   - platform: safe_mode
-    name: "Restart (Safe Mode)"
+    name: 11. Restart (Safe Mode)
     restore_mode: ALWAYS_OFF
 
   - platform: factory_reset
-    name: Restart with Factory Default Settings
+    name: 12. Restart with Factory Default Settings
     id: factory_reset_switch
     restore_mode: ALWAYS_OFF
 
@@ -336,10 +335,10 @@ binary_sensor:
     internal: true
 text_sensor:
   - platform: template
-    name: Last time fed (automatically)
+    name: 07. Last time fed (automatically)
     id: last_update_str
   - platform: template
-    name: Running sum fed
+    name: 09. Running sum fed
     id: feed_sum_str
 time:
   - platform: sntp

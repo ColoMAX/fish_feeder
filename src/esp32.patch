@@ -1,0 +1,31 @@
+diff --git a/fishfeeder.yaml b/fishfeeder_esp32.yaml
+index b5ca05f..c00701c 100644
+--- a/fishfeeder.yaml
++++ b/fishfeeder_esp32.yaml
+@@ -12,9 +12,9 @@ esphome:
+ preferences:
+   flash_write_interval: 1min
+ 
+-esp8266:
+-  board: d1_mini
+-  restore_from_flash: true
++esp32:
++  board: esp32doit-devkit-v1
++
+ 
+ # Enable logging
+ logger:
+@@ -252,11 +252,11 @@ switch:
+     restore_mode: ALWAYS_OFF
+ 
+ output:
+-  - platform: esp8266_pwm
++  - platform: ledc
+     pin: GPIO4
+     frequency: 50 Hz
+     id: screw_pwm
+-  - platform: esp8266_pwm
++  - platform: ledc
+     pin: GPIO14
+     frequency: 50 Hz
+     id: lid_pwm
