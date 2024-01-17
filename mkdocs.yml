@@ -1,10 +1,10 @@
-site_name: Fish Feeder Documentation
+site_name: FishFeeder Documentation
 repo_url: https://github.com/ColoMAX/fishfeeder
 site_url: https://ColoMAX.github.io/fishfeeder
 nav:
   - index.md
   - "getting-started.md"
-  - "overview.md"
+  - "diy.md"
 
 theme:
   name: readthedocs

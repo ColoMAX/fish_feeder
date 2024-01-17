@@ -1,8 +1,4 @@
-# Overview
-
-## Requirements
-
-- [Install ESPHome](https://www.esphome.io) (version 2023.11.6)
+# Making your own
 
 ## Customization
 
@@ -16,6 +12,12 @@ One can customize this project with ease. A few examples are:
 
 ### Software
 
+### Requirements
+
+- Install [ESPHome](https://www.esphome.io) (version 2023.11.6)
+
+After that you can start to work on the software.
+
 - Add your modifications to the configuration in `src/fishfeeder.yaml`.
   - e.g.: new name, enable home-assistant integration, add other controls, such as RGB lights.
 - connect via usb.
@@ -26,7 +28,7 @@ One can customize this project with ease. A few examples are:
 
 Do so to your hearts content, all design files are available in the `design/mechanical` directory. Here you can modify the designs if required. The `3mf` files contain the 3D printed parts, the and the rest should be self evident.
 
-There are some software which you might want to install before continuing.
+There are some software which you might want to install before continuing:
 
 - [PrusaSlicer](https://www.prusa3d.com/page/prusaslicer_424/) to create the gcode for your printer.
 - qrencode by running `apt install qrencode`, for a qr code.

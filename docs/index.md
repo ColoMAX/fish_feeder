@@ -1,26 +1,26 @@
-# Fish Feeder Documentation
+# FishFeeder Documentation
 
-Welcome to the official documentation for the Fish Feeder project! Whether you're a user looking to set up, maintain the device or a DIY enthusiast eager to build your own, you'll find the information you need here.
+Welcome to the official documentation for the FishFeeder project! Whether you're a user looking to set up, maintain the device or a DIY enthusiast eager to build your own, you'll find the information you need here.
 
 ## Table of Contents
 
 - [Getting Started](getting-started.md)
-    - [Initial Setup](getting-started.md#Initial Setup)
-    - [Configuration](getting-started.md#configuration)
-    - [Maintenance](getting-started.md#maintenance)
-    - [Troubleshooting](getting-started.md#troubleshooting)
+      - [Initial Setup](getting-started.md#Initial Setup)
+      - [Configuration](getting-started.md#configuration)
+      - [Maintenance](getting-started.md#maintenance)
+      - [Troubleshooting](getting-started.md#troubleshooting)
 
-- [DIY](overview.md)
-    - [Overview](overview.md#overview)
-    - [Requirements](overview.md#requirements)
-    - [Customization](overview.md#customization)
-    - [Build](overview.md#build)
-          - [Parts List](overview.md#parts_list)
-          - [Assembly](overview.md#assembly)
+- [DIY](diy.md)
+      - [Making your own](diy.md#making-your-own)
+      - [Requirements](diy.md#requirements)
+      - [Customization](diy.md#customization)
+      - [Build](diy.md#build)
+            - [Parts List](diy.md#parts_list)
+            - [Assembly](diy.md#assembly)
 
 ## Getting Started
 
-If you are new to the Fish Feeder project, start with the user documentation to learn how to set up and use the device. If you are interested in building your own Fish Feeder, check out the DIY section for a step-by-step guide.
+If you are new to the FishFeeder project, start with the user documentation to learn how to set up and use the device. If you are interested in building your own FishFeeder, check out the DIY section for a guide.
 
 ## Contribution
 

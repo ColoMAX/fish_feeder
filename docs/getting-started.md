@@ -1,6 +1,6 @@
 # Getting started
 
-If you do not already have the fishfeeder, than first go to [Overview](overview.md#overview) before continuing this document.
+If you do not already have the fishfeeder, than first go to [Making your own](diy.md#making-your-own) before continuing this document.
 
 ![The fishfeeder](assets/pictures/skyview.png)
 
@@ -8,7 +8,7 @@ If you do not already have the fishfeeder, than first go to [Overview](overview.
 
 - Power on the device by connecting the power port (likely a micro-usb or usb-C port on the device). The device should not pull more than 500mA at 5v, thus any usb power source should suffice, but do mind to use a short or high quality usb cable.
   > Tip: you can test whether the device is properly working, by pressing the button on the top for around 1 second. The dispenser screw should start to turn and stop as you release it. If not, there is likely something wrong with your power connection.
-- The first time your power on the device, it will create a WiFi access point, named "Fish Feeder Hotspot". Connect to it using the password `SomethingFishy`.
+- The first time your power on the device, it will create a WiFi access point, named "FishFeeder Hotspot". Connect to it using the password `SomethingFishy`.
 - Now your device should ask you, or redirect you towards the configuration page of the device. If not, you can manually go to the website `http://192.168.4.1`, making sure you are still connected to the access point of the fishfeeder.
   > Alternatively you can try to connect the device via usb to your computer and visit [Improv via Serial](https://www.improv-wifi.com/) to set the initial WiFi credentials directly, without using the hotspot. **NOTE** not all browsers support this feature, the site will indicate if so.
 - (optional) Here you can apply any updates (`*.bin` e.g. `firmware.bin` file) if provided to you.
