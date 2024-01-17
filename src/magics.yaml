@@ -1,0 +1,4 @@
+substitutions:
+  FF_EPOCH: 1705273200LL
+  WEBSERVER_PORT: "80"
+  ap_ssid: FishFeeder${NAME_POSTFIX} Hotspot # Wifi acces point name during initial configuration.

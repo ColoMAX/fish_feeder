@@ -1,0 +1,9 @@
+output:
+  - platform: ledc
+    pin: ${SCREW_MOTOR_PWM_GPIO}
+    frequency: 50 Hz
+    id: screw_pwm
+  - platform: ledc
+    pin: ${LID_MOTOR_PWM_GPIO}
+    frequency: 50 Hz
+    id: lid_pwm

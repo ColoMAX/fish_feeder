@@ -1,0 +1,12 @@
+output:
+  - platform: esp8266_pwm
+    pin: ${SCREW_MOTOR_PWM_GPIO}
+    frequency: 50 Hz
+    id: screw_pwm
+  - platform: esp8266_pwm
+    pin: ${LID_MOTOR_PWM_GPIO}
+    frequency: 50 Hz
+    id: lid_pwm
+
+esp8266:
+  restore_from_flash: true

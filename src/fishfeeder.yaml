@@ -1,390 +1,49 @@
-esphome:
-  name: fishfeeder
+substitutions:
+  # Here you can modify basic configs
+  VIB_MOTOR_GPIO:         GPIO14 # see pin-"number" https://esphome.io/guides/configuration-types#config-pin-schema
+  SCREW_MOTOR_PWM_GPIO:   GPIO4
+  LID_MOTOR_PWM_GPIO:     GPIO14
+  LIGHT_RELAY_GPIO:       GPIO13
+  BUTTON_GPIO:            GPIO5
+  CHIPSET:                esp8266 # or esp32, rp2040 or others, see platforms https://esphome.io/index.html#platforms
+  BOARD:                  d1_mini # or e.g. esp32doit-devkit-v1
+  NAME_POSTFIX:           "" # must be a string
+  # ALSO CHANGE THE ff_hal_ file! to the same name as CHIPSET
+  LOGS_IN_WEB:            "false" # Disable the visibility of the logs on web interface
 
-preferences:
-  flash_write_interval: 1min
+packages:
+  ff_common: !include common.yaml
+  ff_hal: !include ff_hal_esp8266.yaml # ALSO CHANGE THIS!!
 
-esp8266:
-  board: d1_mini
-  restore_from_flash: true
+${CHIPSET}:
+  board: ${BOARD}
 
 # Enable logging
 logger:
+  level: DEBUG
 
 # Enable Home Assistant API
 #api:
 
 ota:
-  password: SomethingFishy # Add pass
+  password: !secret ota_psk
 
-wifi:
-  ap:
-    ssid: "FishFeeder Hotspot"
-    password: SomethingFishy
-captive_portal:
-
-web_server:
-  port: 80
-  log: false
-
-globals:
-  - id: last_timestamp # to keep track of days interval
-    type: time_t
-    restore_value: true
-    initial_value: "1705273200LL"
-  - id: feed_sum # running total sum of dosages
-    type: double
-    restore_value: true
-    initial_value: "0"
-  - id: motor_start_time
-    type: struct timeval
-    restore_value: false
-    initial_value: "{0}"
+### Add you additional customizations here
 light:
   - platform: binary
     name: 00. Fish tank light
     output: light_relay
+output:
+  - id: light_relay
+    platform: gpio
+    pin: ${LIGHT_RELAY_GPIO}
 
-select:
-  - platform: template
-    name: 02. First feeding of day
-    restore_value: true
-    optimistic: true
-    options:
-      - "06:00"
-      - "06:15"
-      - "06:30"
-      - "06:45"
-      - "07:00"
-      - "07:15"
-      - "07:30"
-      - "07:45"
-      - "08:00"
-      - "08:15"
-      - "08:30"
-      - "08:45"
-      - "09:00"
-      - "10:00"
-      - "11:00"
-      - "12:00"
-      - "13:00"
-      - "14:00"
-      - "15:00"
-      - "16:00"
-      - "17:00"
-      - "18:00"
-      - "19:00"
-      - "20:00"
-      - "20:30"
-      - "21:00"
-      - "21:30"
-      - "22:00"
-      # - "22:30"
-    initial_option: "20:00"
-    id: feed_first_time
-    icon: mdi:icon7-time
-    set_action:
-      then:
-        - lambda: |-
-            int hour_start = atoi(x.substr(0, 2).c_str());
-            int min_start = atoi(x.substr(3, 4).c_str());
-            int hour_end = atoi(id(feed_last_time).state.substr(0, 2).c_str());
-            int min_end = atoi(id(feed_last_time).state.substr(3, 4).c_str());
-            if(hour_end*60+min_end<=hour_start*60+min_start){
-                auto index = id(feed_first_time).index_of(x);
-              if (index.has_value()) {
-                auto call= id(feed_last_time).make_call();
-                call.set_index(index.value()); // NOTE this is dependent on that the two selections are very similar;off by 1 and same elements
-                call.perform();
-                id(feed_first_time).update();
-              }else{
-                ESP_LOGW("select", "feed_last_time dos nto have a value yet");
-              }
-            }
-  - platform: template
-    name: 03. Last feeding of day
-    restore_value: true
-    optimistic: true
-    options:
-      # - "06:00"
-      - "06:15"
-      - "06:30"
-      - "06:45"
-      - "07:00"
-      - "07:15"
-      - "07:30"
-      - "07:45"
-      - "08:00"
-      - "08:15"
-      - "08:30"
-      - "08:45"
-      - "09:00"
-      - "10:00"
-      - "11:00"
-      - "12:00"
-      - "13:00"
-      - "14:00"
-      - "15:00"
-      - "16:00"
-      - "17:00"
-      - "18:00"
-      - "19:00"
-      - "20:00"
-      - "20:30"
-      - "21:00"
-      - "21:30"
-      - "22:00"
-      - "22:30"
-    initial_option: "21:00"
-    id: feed_last_time
-    icon: mdi:icon7-time
-    set_action:
-      then:
-        - lambda: |-
-            int hour_start = atoi(id(feed_first_time).state.substr(0, 2).c_str());
-            int min_start = atoi(id(feed_first_time).state.substr(3, 4).c_str());
-            int hour_end = atoi(x.substr(0, 2).c_str());
-            int min_end = atoi(x.substr(3, 4).c_str());
-            if(hour_end*60+min_end<=hour_start*60+min_start){
-              auto index = id(feed_last_time).index_of(x);
-              if (index.has_value()) {
-                auto call= id(feed_first_time).make_call();
-                call.set_index(index.value()); // NOTE this is dependent on that the two selections are very similar;off by 1 and same elements
-                call.perform();
-                id(feed_last_time).update();
-              }else{
-              ESP_LOGW("select", "feed_first_time dos nto have a value yet");
-              }
-            }
-number:
-  - platform: template
-    name: 05. Number times per day
-    min_value: 1
-    max_value: 10
-    step: 1
-    initial_value: 1
-    restore_value: true
-    id: feed_num_per_day
-    optimistic: true
-    icon: mdi:icon7-th-list
-  - platform: template
-    name: 04. Once every ...  days
-    min_value: 1
-    max_value: 14
-    step: 1
-    initial_value: 1
-    restore_value: true
-    id: feed_day_interval
-    optimistic: true
-    icon: mdi:icon7-table
-    set_action:
-      then: # not nessasary, but otherwise function might be weird fo rthe user, since living things likely will not benefit from such a schedule
-        - lambda: |-
-            if(x>1) {id(feed_num_per_day).publish_state(1);id(feed_num_per_day).update();}
-
-  - platform: template
-    name: 06. Dosage
-    min_value: 0.2
-    max_value: 5
-    step: 0.2
-    initial_value: 1
-    restore_value: true
-    id: feed_dosage
-    optimistic: true
-button:
-  - platform: template
-    name: 01. Manual feed
-    icon: mdi:icon-stackexchange
-    on_press:
-      - cover.open: fishtank_lid
-      - delay: 500ms
-      - switch.turn_on: feed_motor
-      - delay: !lambda |-
-          return id(feed_dosage).state*1000; // milliseconds
-      - switch.turn_off: feed_motor
-      - switch.turn_on: vib_motor
-      - delay: 500ms
-      - cover.close: fishtank_lid
-    id: feeder_trigger
-  - platform: template
-    name: 08. Reset last feeding time
-    on_press:
-      - then:
-         - lambda: |-
-            id(last_timestamp)=1705273200LL; // start of project
-            id(last_update_str).publish_state(strtok(ctime(&id(last_timestamp)), "\n"));
-    id: last_time_btn
 switch:
-  - platform: template
-    id: feed_motor
-    # inverted: true
-    restore_mode: ALWAYS_OFF
-    name: feeder motor
-    internal: true # TODO REMOVE THIS
-    # optimistic: true
-    turn_on_action:
-      then:
-        - lambda: |-
-            id(sntptime).now().timestamp;
-            struct timeval tv;
-            gettimeofday(&tv,NULL);
-            id(motor_start_time)=tv;
-        - servo.write:
-            id: screw_servo
-            level: -10%
-    turn_off_action:
-      then:
-        - servo.detach: screw_servo
-        - lambda: |-
-            # define timeval_diff_macro(a, b, result)                  \
-            do {                                                \
-              (result)->tv_sec = (a)->tv_sec - (b)->tv_sec;     \
-              (result)->tv_usec = (a)->tv_usec - (b)->tv_usec;  \
-              if ((result)->tv_usec < 0) {                      \
-                --(result)->tv_sec;                             \
-                (result)->tv_usec += 1000000;                \
-              }                                                 \
-            } while (0)
-
-            id(sntptime).now().timestamp;
-            struct timeval tv;
-            struct timeval tvstart = id(motor_start_time);
-
-            gettimeofday(&tv,NULL);
-            timeval_diff_macro(&tv,&tvstart,&tv);
-            id(feed_sum)+=  (double)tv.tv_sec+tv.tv_usec/1000000.0;
-            char fsbuf[15];
-            snprintf(fsbuf, sizeof(fsbuf), "%6.2f", id(feed_sum));
-            id(feed_sum_str).publish_state(fsbuf);
-
-
   - platform: gpio
-    pin: GPIO14
+    pin: ${VIB_MOTOR_GPIO}             # Vibration motor GPIO
     name: vibration motor
     internal: true
     id: vib_motor
     on_turn_on:
       - delay: 100ms
       - switch.turn_off: vib_motor
-
-  - platform: restart
-    name: 10. Restart
-    restore_mode: ALWAYS_OFF
-
-  - platform: safe_mode
-    name: 11. Restart (Safe Mode)
-    restore_mode: ALWAYS_OFF
-
-  - platform: factory_reset
-    name: 12. Restart with Factory Default Settings
-    id: factory_reset_switch
-    restore_mode: ALWAYS_OFF
-
-output:
-  - platform: esp8266_pwm
-    pin: GPIO4
-    frequency: 50 Hz
-    id: screw_pwm
-  - platform: esp8266_pwm
-    pin: GPIO14
-    frequency: 50 Hz
-    id: lid_pwm
-  - id: light_relay
-    platform: gpio
-    pin: GPIO13
-
-
-servo:
-  - id: screw_servo
-    output: screw_pwm
-  - id: lid_servo
-    output: lid_pwm
-
-cover:
-  - platform: template
-    id: fishtank_lid
-    open_action:
-      - servo.write:
-          id: lid_servo
-          level: 100%
-    close_action:
-      - servo.write:
-          id: lid_servo
-          level: -100%
-    stop_action:
-      - servo.detach: lid_servo
-    optimistic: true
-    assumed_state: true
-
-binary_sensor:
-  - platform: gpio
-    pin:
-      number: GPIO5
-      mode:
-        input: true
-        pullup: true
-      inverted: true
-    name: "Manual feed button"
-    filters:
-      - delayed_on_off: 10ms
-    id: real_button
-    on_press:
-      then:
-        - cover.open: fishtank_lid
-        - delay: 500ms
-        - switch.turn_on: feed_motor
-    on_release:
-      then:
-        - delay: 500ms # otherwise motor may continue running, since the next command might get executed before teh turn_on command from the on_press
-        - switch.turn_off: feed_motor
-        - delay: 1ms
-        - switch.turn_on: vib_motor
-        - delay: 500ms
-        - cover.close: fishtank_lid
-    on_multi_click:
-      - timing: #  3x (short, long)
-          - ON for at most 1s
-          - OFF for at most 1s
-          - ON for 0.5s to 1s
-          - OFF for at least 0.2s
-          - ON for at most 1s
-          - OFF for at most 1s
-          - ON for 0.5s to 1s
-          - OFF for at least 0.2s
-          - ON for at most 1s
-          - OFF for at most 1s
-          - ON for 0.5s to 1s
-          - OFF for at least 0.2s
-        then:
-          - logger.log: "DEVICE IS ABOUT TO BE FACTORY RESET in 10 sec"
-          - delay: 10s
-          - switch.turn_on: vib_motor
-          - delay: 500ms
-          - switch.turn_on: factory_reset_switch
-    internal: true
-text_sensor:
-  - platform: template
-    name: 07. Last time fed (automatically)
-    id: last_update_str
-  - platform: template
-    name: 09. Running sum fed
-    id: feed_sum_str
-time:
-  - platform: sntp
-    id: sntptime
-    timezone: Europe/Amsterdam
-    # note specifically set GMT as timezone as we will calculate local time using offset
-    on_time:
-      - seconds: 0
-        minutes: /1
-        # note minutes: /1, not minutes: 1, the latter only does the first minute of each hour rather than every minute
-        then:
-          - lambda: |-
-              #include "../../../../timing.cpp"
-    on_time_sync:
-      then:
-        - lambda: |-
-            id(last_update_str).publish_state(strtok(ctime(&id(last_timestamp)), "\n"));
-improv_serial:
-  # next_url: https://colomax.github.io/fishfeeder/getting-started/#configuration
-  next_url: http://{{ip_address}}:80

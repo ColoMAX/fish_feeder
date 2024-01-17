@@ -43,6 +43,10 @@ You may also visit the [release page](https://github.com/ColoMAX/fishfeeder/rele
 - If you are helpless you can also try to reset to **factory defaults**:
       - If you can access the configuration webpage, you can reset back to factory defaults over there.
       - If not, you can use the button on the device itself: You need to do three rapid salvos of one short press, then one longer (0.5 seconds), similar to a heartbeat. 10 seconds after the lasst lomg press, will it vibrate (assuming vibration motor is installed), and do the factory reset.
-
+  > Note that his will not revert any firmware updates.
 
 Lastly you can try to submit a new issue on github if you are not able to figure it out yourself.
+
+### Known bugs
+
+- After an update has been performed via ota (WiFi), the running feeding sum can be lost and will display the wrong value. A subsequent factory reset will also not reset the counter to 0.
