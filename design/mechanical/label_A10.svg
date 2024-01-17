@@ -13,7 +13,10 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <sodipodi:namedview
      id="namedview7"
      pagecolor="#505050"
@@ -25,12 +28,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="4.8348576"
-     inkscape:cx="57.085446"
+     inkscape:cx="53.15565"
      inkscape:cy="44.985813"
      inkscape:window-width="1920"
      inkscape:window-height="1056"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="535"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -88,13 +91,13 @@
        style="font-size:21.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3752);fill:#ffff00"><tspan
          x="4.453125"
          y="24.219307"
-         id="tspan892"><tspan
+         id="tspan895"><tspan
            style="font-weight:bold"
-           id="tspan886">MS</tspan><tspan
+           id="tspan889">MS</tspan><tspan
            style="font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-           id="tspan888">fishf</tspan><tspan
+           id="tspan891">fishf</tspan><tspan
            style="font-size:16px"
-           id="tspan890">1</tspan></tspan></text>
+           id="tspan893">1</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-2.365093,4.7638233)"
@@ -128,4 +131,21 @@
          height="100%" />
     </g>
   </g>
+  <metadata
+     id="metadata851">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <cc:license
+           rdf:resource="https://github.com/ColoMAX/fishfeeder/blob/master/LICENSE.md" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>ColoMAX</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:language>en_GB</dc:language>
+        <dc:source>https://github.com/ColoMAX/fishfeeder/</dc:source>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
 </svg>

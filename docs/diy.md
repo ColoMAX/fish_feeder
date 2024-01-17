@@ -4,7 +4,7 @@
 
 One can customize this project with ease. A few examples are:
 
-- Instead of ESP8266, use an ESP32 (or variants). For this one would need to substitute `esp8266_pwm` with `ledc` in the yaml file, and change the board.
+- Instead of ESP8266, use an ESP32 (or variants). For this one would need to substitute `esp8266_pwm` with `ledc` in the yaml file, and change the board (example provided after running `src/gen_variants.sh`).
 - Add RGB lighting and heating control by adding a temperature sensor and [Climate controller ESPHome software component](https://esphome.io/components/climate/bang_bang).
 - Add graphics to your box by modifying the laser cutter files.
 - Add custom lighting effects to mimic a sunrise using [RGB-leds](https://esphome.io/components/light/rgb.html) and the [ESPHome sun component](https://esphome.io/components/sun.html).

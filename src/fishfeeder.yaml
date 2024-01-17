@@ -1,13 +1,5 @@
 esphome:
   name: fishfeeder
-  on_boot:
-      priority: 800
-      then:
-        - lambda: |-
-            id(last_update_str).publish_state(strtok(ctime(&id(last_timestamp)), "\n"));
-            char fsbuf[15];
-            snprintf(fsbuf, sizeof(fsbuf), "%.2g", id(feed_sum));
-            id(feed_sum_str).publish_state(fsbuf);
 
 preferences:
   flash_write_interval: 1min
@@ -39,7 +31,7 @@ globals:
   - id: last_timestamp # to keep track of days interval
     type: time_t
     restore_value: true
-    initial_value: "0"
+    initial_value: "1705273200LL"
   - id: feed_sum # running total sum of dosages
     type: double
     restore_value: true
@@ -91,6 +83,24 @@ select:
     initial_option: "20:00"
     id: feed_first_time
     icon: mdi:icon7-time
+    set_action:
+      then:
+        - lambda: |-
+            int hour_start = atoi(x.substr(0, 2).c_str());
+            int min_start = atoi(x.substr(3, 4).c_str());
+            int hour_end = atoi(id(feed_last_time).state.substr(0, 2).c_str());
+            int min_end = atoi(id(feed_last_time).state.substr(3, 4).c_str());
+            if(hour_end*60+min_end<=hour_start*60+min_start){
+                auto index = id(feed_first_time).index_of(x);
+              if (index.has_value()) {
+                auto call= id(feed_last_time).make_call();
+                call.set_index(index.value()); // NOTE this is dependent on that the two selections are very similar;off by 1 and same elements
+                call.perform();
+                id(feed_first_time).update();
+              }else{
+                ESP_LOGW("select", "feed_last_time dos nto have a value yet");
+              }
+            }
   - platform: template
     name: 03. Last feeding of day
     restore_value: true
@@ -128,6 +138,24 @@ select:
     initial_option: "21:00"
     id: feed_last_time
     icon: mdi:icon7-time
+    set_action:
+      then:
+        - lambda: |-
+            int hour_start = atoi(id(feed_first_time).state.substr(0, 2).c_str());
+            int min_start = atoi(id(feed_first_time).state.substr(3, 4).c_str());
+            int hour_end = atoi(x.substr(0, 2).c_str());
+            int min_end = atoi(x.substr(3, 4).c_str());
+            if(hour_end*60+min_end<=hour_start*60+min_start){
+              auto index = id(feed_last_time).index_of(x);
+              if (index.has_value()) {
+                auto call= id(feed_first_time).make_call();
+                call.set_index(index.value()); // NOTE this is dependent on that the two selections are very similar;off by 1 and same elements
+                call.perform();
+                id(feed_last_time).update();
+              }else{
+              ESP_LOGW("select", "feed_first_time dos nto have a value yet");
+              }
+            }
 number:
   - platform: template
     name: 05. Number times per day
@@ -226,8 +254,9 @@ switch:
             timeval_diff_macro(&tv,&tvstart,&tv);
             id(feed_sum)+=  (double)tv.tv_sec+tv.tv_usec/1000000.0;
             char fsbuf[15];
-            snprintf(fsbuf, sizeof(fsbuf), "%.2g", id(feed_sum));
+            snprintf(fsbuf, sizeof(fsbuf), "%6.2f", id(feed_sum));
             id(feed_sum_str).publish_state(fsbuf);
+
 
   - platform: gpio
     pin: GPIO14
@@ -352,6 +381,10 @@ time:
         then:
           - lambda: |-
               #include "../../../../timing.cpp"
+    on_time_sync:
+      then:
+        - lambda: |-
+            id(last_update_str).publish_state(strtok(ctime(&id(last_timestamp)), "\n"));
 improv_serial:
   # next_url: https://colomax.github.io/fishfeeder/getting-started/#configuration
   next_url: http://{{ip_address}}:80
