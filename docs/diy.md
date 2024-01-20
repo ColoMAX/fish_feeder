@@ -59,8 +59,8 @@ To generate a QR to this page, which will be put on the box, run `cd design/mech
 
 These instructions are not complete, but should give you the general idea, be creative!
 
-- 3D print the screw(`design/mechanical/screw.3mf`) and bucket(`design/mechanical/bucket.3mf`).
-- Laser-cut the casing [mechanical/Laser_cut_box.svg](design/mechanical/Laser_cut_box.svg).
+- 3D print the screw(`design/mechanical/screw.3mf`), bucket(`design/mechanical/bucket.3mf`) and optionally the cap (via `GNU make` to generate the `.3mf`).
+- Laser-cut the casing `design/mechanical/Laser_cut_box.svg`.
 - one the servo's needs to be modified for continues rotation. You can follow a few guides online but here is a summary:
       - Remove rotation limit on one of the gears
       - Remove the metal extremities on the base of the potentiometer shaft.

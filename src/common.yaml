@@ -226,7 +226,7 @@ switch:
             id(motor_start_time)=tv;
         - servo.write:
             id: screw_servo
-            level: -10%
+            level: -20%
     turn_off_action:
       then:
         - servo.detach: screw_servo
