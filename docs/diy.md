@@ -20,9 +20,14 @@ After that you can start to work on the software.
 
 - Add your modifications to the configuration in `src/fishfeeder.yaml`.
   - e.g.: new name, enable home-assistant integration, add other controls, such as RGB lights.
+
+### Flashing firmware
+
 - connect via usb.
 - run: `cd src/; esphome run --device /dev/ttyUSB0 fishfeeder.yaml `
 - Then connect to wifi access point, or go to the webserver (by default `http://fishfeeder.local:80`) to configure it.
+
+> Alternatively you can use the browser based uploading, with a generic firmware image on [this page](burner.html). And if you which, upload your modifications using OTA uploads after that.
 
 ### Mechanical
 

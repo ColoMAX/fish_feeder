@@ -4,9 +4,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+
+#ifdef NDEBUG
+#define ESP_LOGD(_, ...)
+#else
 #define ESP_LOGD(_, ...) \
   printf(__VA_ARGS__);   \
   printf("\n")
+#endif
 #define ESP_LOGI(_, ...) \
   printf(__VA_ARGS__);   \
   printf("\n")
@@ -51,19 +56,19 @@ int main() {
     auto time_now = init_time + warp_time;  // id(sntptime).now();
 
 #else
-struct tm new_stamp = {0};
+    struct tm new_stamp = {0};
 
-auto time_obj = id(sntptime).now();
-auto time_now = time_obj.timestamp;
-int feed_day_interval_mock = id(feed_day_interval).state;
-int feed_num_per_day_mock = id(feed_num_per_day).state;
-auto feed_start_l = id(feed_first_time).state;
-int feed_start_time_hr = atoi(feed_start_l.substr(0, 2).c_str());
-int feed_start_time_min = atoi(feed_start_l.substr(3, 2).c_str());
-auto feed_end_l = id(feed_last_time).state;
-int feed_end_time_hr = atoi(feed_end_l.substr(0, 2).c_str());
-int feed_end_time_min = atoi(feed_end_l.substr(3, 2).c_str());
-time_t last_timestamp_l = id(last_timestamp);
+    auto time_obj = id(sntptime).now();
+    auto time_now = time_obj.timestamp;
+    int feed_day_interval_mock = id(feed_day_interval).state;
+    int feed_num_per_day_mock = id(feed_num_per_day).state;
+    auto feed_start_l = id(feed_first_time).state;
+    int feed_start_time_hr = atoi(feed_start_l.substr(0, 2).c_str());
+    int feed_start_time_min = atoi(feed_start_l.substr(3, 2).c_str());
+    auto feed_end_l = id(feed_last_time).state;
+    int feed_end_time_hr = atoi(feed_end_l.substr(0, 2).c_str());
+    int feed_end_time_min = atoi(feed_end_l.substr(3, 2).c_str());
+    time_t last_timestamp_l = id(last_timestamp);
 #endif
 
     localtime_r(&last_timestamp_l, &new_stamp);
@@ -90,9 +95,9 @@ time_t last_timestamp_l = id(last_timestamp);
     new_stamp.tm_mon = curtime->tm_mon;    // time.month - 1;
     new_stamp.tm_mday = curtime->tm_mday;  // time.day_of_month;
 #else
-new_stamp.tm_year = time_obj.year - 1900;
-new_stamp.tm_mon = time_obj.month - 1;
-new_stamp.tm_mday = time_obj.day_of_month;
+    new_stamp.tm_year = time_obj.year - 1900;
+    new_stamp.tm_mon = time_obj.month - 1;
+    new_stamp.tm_mday = time_obj.day_of_month;
 #endif
     time_t first_of_day = mktime(&new_stamp);
 
